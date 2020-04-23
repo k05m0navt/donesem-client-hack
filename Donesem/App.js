@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Login from './src/scenes/login/Login.js';
-import { View } from 'react-native';
-import appstyles from './src/styles/appstyles.js';
+import ProfileDemo from './src/scenes/profile_demo/ProfileDemo.js';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Password from './src/scenes/password/Password.js';
+import { TouchableOpacity, Text } from 'react-native';
+
 
 class App extends Component {
   render() {
@@ -25,6 +26,13 @@ const AppNavigator = createStackNavigator({
     screen: Password,
     navigationOptions: {
       headerShown: false
+    }
+  },
+  ProfileDemo: {
+    screen: ProfileDemo,
+    navigationOptions: {
+      headerTitle: "Profile",
+      headerLeft: () => null
     }
   }
 },{

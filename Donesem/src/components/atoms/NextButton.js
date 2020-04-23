@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class NextButton extends Component {
+    
     handleClick = () => {
         this.props.handleFunction()
     }

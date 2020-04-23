@@ -7,6 +7,14 @@ import password from '../../styles/passwordstyles';
 
 
 class Password extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handleFunction = () => {
+        this.props.navigation.navigate('ProfileDemo');
+    } 
+
     render() {
         return(
             <View style={password.password_header}>
@@ -14,7 +22,7 @@ class Password extends Component {
                 <Text style={password.password_text_enter}>Здравствуйте</Text>
                 <PasswordHeader/>
                 <PasswordInput/>
-                <PasswordFooter/>
+                <PasswordFooter handleFunction={this.handleFunction}/>
             </View>
         );
     }

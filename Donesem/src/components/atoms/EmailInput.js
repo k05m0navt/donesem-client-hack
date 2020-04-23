@@ -7,8 +7,18 @@ class EmailInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            phone: '',
+            phone: ''
         };
+
+        this.setPhone = this.setPhone.bind(this)
+    }
+
+    setPhone = (phone) => {
+        this.setState({
+            phone: phone
+        },
+            () => console.log(this.state)
+        );
     }
 
     render() {
@@ -17,6 +27,7 @@ class EmailInput extends Component {
                 <TextInput
                     style={email.login_input}
                     placeholder="Номер телефона"
+                    onChangeText={(phone) => this.setPhone(phone)}
                 />
             </View>
         );

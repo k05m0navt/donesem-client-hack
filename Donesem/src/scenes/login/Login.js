@@ -12,7 +12,7 @@ class Login extends Component {
 
     handleFunction = () => {
         this.props.navigation.navigate('Password');
-    } 
+    }
     
     render() {
         return(
@@ -20,7 +20,7 @@ class Login extends Component {
                 <Logo/>
                 <Text style={login.login_text_enter}>Войти</Text>
                 <LoginHeader/>
-                <EmailInput/>
+                <EmailInput setPhone={this.setPhone}/>
                 <LoginFooter handleFunction={this.handleFunction}/>
             </View>
         );

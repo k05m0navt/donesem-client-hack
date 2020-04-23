@@ -5,8 +5,21 @@ import profiledemo from '../../styles/profiledemostyles.js';
 
 class InnInput extends Component {
 
-    handleSubmit = () => {
-        this.props.handleFunction();
+    constructor(props) {
+        super(props);
+
+        this.state ={
+            inn: ''
+        };
+        this.setInn = this.setInn.bind(this);
+    }
+
+    setInn = (inn) => {
+        this.setState({
+            inn: inn
+        },
+            () => console.log(this.state)
+        );
     }
 
     render() {
@@ -15,6 +28,7 @@ class InnInput extends Component {
                 <TextInput
                     placeholder="Введите ваш ИНН"
                     style={profiledemo.input_style}
+                    onChangeText={(inn) => this.setInn(inn)}
                 />
             </View>
         );

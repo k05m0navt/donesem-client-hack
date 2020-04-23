@@ -1,14 +1,26 @@
-import React from 'react';
-import { View, TextInput, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, TextInput } from 'react-native';
 import email from '../../styles/emailstyles.js';
 
-const EmailInput = () => (
-    <View style={email.login_container}>
-        <TextInput
-            style={email.login_input}
-            placeholder="Адрес эл. почты"
-        />
-    </View>
-);
+class EmailInput extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            phone: '',
+        };
+    }
+
+    render() {
+        return(
+            <View style={email.login_container}>
+                <TextInput
+                    style={email.login_input}
+                    placeholder="Номер телефона"
+                />
+            </View>
+        );
+    }
+}
 
 export default EmailInput;

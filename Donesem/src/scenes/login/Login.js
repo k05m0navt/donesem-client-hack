@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { EmailInput, Logo } from '../../components/atoms';
 import { LoginFooter, LoginHeader} from '../../components/molecules';
-import { View, Text } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import login from '../../styles/loginstyles.js';
 
-const Login = () => (
-    <View style={login.login_header}>
-        <Logo/>
-        <Text style={login.login_text_enter}>Войти</Text>
-        <LoginHeader/>
-        <EmailInput/>
-        <LoginFooter/>
-    </View>
-);
+class Login extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    handleFunction = () => {
+        this.props.navigation.navigate('Password');
+    } 
+    
+    render() {
+        return(
+            <View style={login.login_header}>
+                <Logo/>
+                <Text style={login.login_text_enter}>Войти</Text>
+                <LoginHeader/>
+                <EmailInput/>
+                <LoginFooter handleFunction={this.handleFunction}/>
+            </View>
+        );
+    }
+}
 
 export default Login;

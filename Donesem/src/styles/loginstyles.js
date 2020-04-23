@@ -16,7 +16,7 @@ const login = StyleSheet.create({
         marginBottom: "3%"
     },
     login_text: {
-        paddingLeft: "14.7%",
+        paddingLeft: "23.1%",
         fontSize: 14,
         lineHeight: 16,
         textAlign: "center"

@@ -9,19 +9,30 @@ class ProfileDemo extends Component {
         super(props);
         this.state = {
             user: {
-                phone: JSON.stringify(this.props.navigation.getParam('phone', '')),
-                password: JSON.stringify(this.props.navigation.getParam('password', '')),
+                phone: this.props.navigation.getParam('phone', ''),
+                password: this.props.navigation.getParam('password', ''),
+                is_tax_payer: this.props.navigation.getParam('is_tax_payer', ''),
                 inn: ''
             }
         }
     }
     
     handleFunction = () => {
-        this.props.navigation.navigate('Main', {
-            phone: this.state.user,
-            password: this.state.user.password,
-            inn: this.state.user.inn
-        });
+        console.log(this.state.user.phone);
+        if (this.state.user.is_tax_payer) {
+            this.props.navigation.navigate('Main', {
+                phone: this.state.user,
+                password: this.state.user.password,
+                inn: this.state.user.inn
+            });
+        }
+        else {
+            this.props.navigation.navigate('ProfileDemo', {
+                phone: this.state.user,
+                password: this.state.user.password,
+                inn: this.state.user.inn
+            });
+        }
     }
 
     render() {

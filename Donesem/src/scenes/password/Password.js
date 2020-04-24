@@ -11,16 +11,19 @@ class Password extends Component {
         super(props);
         this.state = {
             user: {
-                phone: JSON.stringify(this.props.navigation.getParam('phone', '')),
-                password: ''
+                phone: this.props.navigation.getParam('phone', ''),
+                password: '',
+                is_tax_payer: false
             }
         }
     }
 
     handleFunction = () => {
+        console.log(this.state.user.phone);
         this.props.navigation.navigate('ProfileDemo', {
-            phone: this.state.user,
-            password: this.state.user.password
+            phone: this.state.user.phone,
+            password: this.state.user.password,
+            is_tax_payer: this.state.user.is_tax_payer
         });
         console.log(this.state.user.phone)
     } 

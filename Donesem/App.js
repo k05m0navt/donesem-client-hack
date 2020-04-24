@@ -4,10 +4,19 @@ import ProfileDemo from './src/scenes/profile_demo/ProfileDemo.js';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Password from './src/scenes/password/Password.js';
-import { TouchableOpacity, Text } from 'react-native';
-
+import Main from './src/scenes/tab_navigation/Main.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        name: '',
+        token: ''
+      }
+    }
+  }
+
   render() {
     return(
       <AppContainer/>
@@ -33,6 +42,12 @@ const AppNavigator = createStackNavigator({
     navigationOptions: {
       headerTitle: "Profile",
       headerLeft: () => null
+    }
+  },
+  Main: {
+    screen: Main,
+    navigationOptions: {
+      headerTitle: "Profile"
     }
   }
 },{

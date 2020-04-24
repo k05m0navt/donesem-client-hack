@@ -13,6 +13,10 @@ class InnInputFooter extends Component {
         this.setInn = this.setInn.bind(this);
     }
 
+    handleClick = () => {
+        this.props.handleFunction();
+    }
+
     setModalVisible = (visible) => {
         this.setState({
             isModalVisible: visible
@@ -46,6 +50,7 @@ class InnInputFooter extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={profiledemo.footer_button}
+                        onPress={this.handleClick}
                     >
                         <Text style={profiledemo.footer_button_text}>Войти</Text>
                     </TouchableOpacity>

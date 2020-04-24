@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import { EmailInput, Logo } from '../../components/atoms';
+import { PhoneInput, Logo } from '../../components/atoms';
 import { LoginFooter, LoginHeader} from '../../components/molecules';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import login from '../../styles/loginstyles.js';
 
 class Login extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            user: {
+                phone: '+79267942415'
+            }
+        }
     }
 
     handleFunction = () => {
-        this.props.navigation.navigate('Password');
+        this.props.navigation.navigate('Password', {
+            phone: this.state.user.phone
+        });
+        console.log(this.state.user.phone)
     }
     
     render() {
@@ -20,7 +28,7 @@ class Login extends Component {
                 <Logo/>
                 <Text style={login.login_text_enter}>Войти</Text>
                 <LoginHeader/>
-                <EmailInput setPhone={this.setPhone}/>
+                <PhoneInput setPhone={this.setPhone}/>
                 <LoginFooter handleFunction={this.handleFunction}/>
             </View>
         );

@@ -9,10 +9,20 @@ import password from '../../styles/passwordstyles';
 class Password extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            user: {
+                phone: JSON.stringify(this.props.navigation.getParam('phone', '')),
+                password: ''
+            }
+        }
     }
 
     handleFunction = () => {
-        this.props.navigation.navigate('ProfileDemo');
+        this.props.navigation.navigate('ProfileDemo', {
+            phone: this.state.user,
+            password: this.state.user.password
+        });
+        console.log(this.state.user.phone)
     } 
 
     render() {

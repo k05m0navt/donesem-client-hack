@@ -9,17 +9,19 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                phone: '+79267942415'
-            }
+            phone: ''
         }
+    }
+
+    setPhone = (phone) => {
+        this.setState({phone: phone})
     }
 
     handleFunction = () => {
         this.props.navigation.navigate('Password', {
-            phone: this.state.user.phone
+            phone: this.state.phone
         });
-        console.log(this.state.user.phone)
+        console.log(this.state.phone)
     }
     
     render() {

@@ -6,18 +6,10 @@ class PasswordInput extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            password: ''
-        };
-        this.setPassword = this.setPassword.bind(this);
     }
 
-    setPassword = (pass) => {
-        this.setState({
-            password: pass
-        },
-            () => console.log(this.state)
-        );
+    setPassword = (password) => {
+        this.props.setPassword(password);
     }
 
     render() {
@@ -27,7 +19,7 @@ class PasswordInput extends Component {
                     style={passwordinput.password_input}
                     secureTextEntry
                     placeholder="Введите пароль"
-                    onChangeText={(pass) => this.setPassword(pass)}
+                    onChangeText={(password) => this.setPassword(password)}
                 />
             </View>
         );

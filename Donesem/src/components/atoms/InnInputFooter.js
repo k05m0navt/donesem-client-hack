@@ -8,9 +8,7 @@ class InnInputFooter extends Component {
         super(props);
         this.state = {
             isModalVisible: false,
-            inn: ''
         }
-        this.setInn = this.setInn.bind(this);
     }
 
     handleClick = () => {
@@ -24,11 +22,7 @@ class InnInputFooter extends Component {
     }
 
     setInn = (inn) => {
-        this.setState({
-            inn: inn
-        },
-            () => console.log(this.state)
-        );
+        this.props.setInn(inn);
     }
 
     render() {

@@ -6,19 +6,10 @@ class EmailInput extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            phone: ''
-        };
-
-        this.setPhone = this.setPhone.bind(this)
     }
 
     setPhone = (phone) => {
-        this.setState({
-            phone: phone
-        },
-            () => console.log(this.state)
-        );
+        this.props.setPhone(phone);
     }
 
     render() {

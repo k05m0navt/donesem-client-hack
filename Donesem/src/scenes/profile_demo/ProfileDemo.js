@@ -8,30 +8,33 @@ class ProfileDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                phone: this.props.navigation.getParam('phone', ''),
-                password: this.props.navigation.getParam('password', ''),
-                is_tax_payer: this.props.navigation.getParam('is_tax_payer', ''),
-                inn: ''
-            }
+            phone: this.props.navigation.getParam('phone', ''),
+            password: this.props.navigation.getParam('password', ''),
+            is_tax_payer: this.props.navigation.getParam('is_tax_payer', ''),
+            inn: ''
         }
+    }
+
+    setInn = (inn) => {
+        this.setState({ inn: inn });
     }
     
     handleFunction = () => {
-        console.log(this.state.user.phone);
-        if (this.state.user.is_tax_payer) {
+        if (this.state.is_tax_payer) {
             this.props.navigation.navigate('Main', {
-                phone: this.state.user,
-                password: this.state.user.password,
-                inn: this.state.user.inn
+                phone: this.state.phone,
+                password: this.state.password,
+                inn: this.state.inn
             });
+            console.log(this.state.inn);
         }
         else {
             this.props.navigation.navigate('ProfileDemo', {
-                phone: this.state.user,
-                password: this.state.user.password,
-                inn: this.state.user.inn
+                phone: this.state.phone,
+                password: this.state.password,
+                inn: this.state.inn
             });
+            console.log(this.state.inn);
         }
     }
 
@@ -39,7 +42,7 @@ class ProfileDemo extends Component {
         return(
             <View>
                 <ProfileDemoHeader/>
-                <InnInputFooter handleFunction={this.handleFunction}/>
+                <InnInputFooter handleFunction={this.handleFunction} setInn={this.setInn}/>
             </View>
         );
     }

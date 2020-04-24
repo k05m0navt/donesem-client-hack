@@ -10,22 +10,24 @@ class Password extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                phone: this.props.navigation.getParam('phone', ''),
-                password: '',
-                is_tax_payer: false
-            }
+            phone: this.props.navigation.getParam('phone', ''),
+            password: '',
+            is_tax_payer: true
         }
     }
 
+    setPassword = (password) => {
+        this.setState({ password: password });
+    }
+
     handleFunction = () => {
-        console.log(this.state.user.phone);
         this.props.navigation.navigate('ProfileDemo', {
-            phone: this.state.user.phone,
-            password: this.state.user.password,
-            is_tax_payer: this.state.user.is_tax_payer
+            phone: this.state.phone,
+            password: this.state.password,
+            is_tax_payer: this.state.is_tax_payer
         });
-        console.log(this.state.user.phone)
+        console.log(this.state.phone);
+        console.log(this.state.password)
     } 
 
     render() {
@@ -34,7 +36,7 @@ class Password extends Component {
                 <Logo/>
                 <Text style={password.password_text_enter}>Здравствуйте</Text>
                 <PasswordHeader/>
-                <PasswordInput/>
+                <PasswordInput setPassword={this.setPassword}/>
                 <PasswordFooter handleFunction={this.handleFunction}/>
             </View>
         );

@@ -9,9 +9,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/donesem.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/donesem.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

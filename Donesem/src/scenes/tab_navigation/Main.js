@@ -10,11 +10,8 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                phone: JSON.stringify(this.props.navigation.getParam('phone', '')),
-                password: JSON.stringify(this.props.navigation.getParam('password', '')),
-                inn: JSON.stringify(this.props.navigation.getParam('inn', ''))
-            }
+            user: this.props.navigation.getParam('user', {}),
+            token: this.props.navigation.getParam('token', ''),
         }
     }
 

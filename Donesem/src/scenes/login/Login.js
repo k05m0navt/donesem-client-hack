@@ -21,7 +21,6 @@ class Login extends Component {
         this.props.navigation.navigate('Password', {
             phone: this.state.phone
         });
-        console.log(this.state.phone)
     }
     
     render() {

@@ -8,34 +8,20 @@ class ProfileDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            phone: this.props.navigation.getParam('phone', ''),
-            password: this.props.navigation.getParam('password', ''),
-            is_tax_payer: this.props.navigation.getParam('is_tax_payer', ''),
-            inn: ''
+            user: this.props.navigation.getParam('user', {}),
+            token: this.props.navigation.getParam('token', ''),
         }
     }
 
     setInn = (inn) => {
-        this.setState({ inn: inn });
+        this.state.user.inn = inn;
     }
     
     handleFunction = () => {
-        if (this.state.is_tax_payer) {
-            this.props.navigation.navigate('Main', {
-                phone: this.state.phone,
-                password: this.state.password,
-                inn: this.state.inn
-            });
-            console.log(this.state.inn);
-        }
-        else {
-            this.props.navigation.navigate('ProfileDemo', {
-                phone: this.state.phone,
-                password: this.state.password,
-                inn: this.state.inn
-            });
-            console.log(this.state.inn);
-        }
+        this.props.navigation.navigate('Main', {
+            user: this.state.user,
+            token: this.state.token
+        });
     }
 
     render() {

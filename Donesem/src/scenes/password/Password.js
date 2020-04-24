@@ -12,7 +12,6 @@ class Password extends Component {
         this.state = {
             phone: this.props.navigation.getParam('phone', ''),
             password: '',
-            is_tax_payer: true
         }
     }
 
@@ -20,14 +19,38 @@ class Password extends Component {
         this.setState({ password: password });
     }
 
+    login = () => {
+        fetch('https://hidden-garden-77483.herokuapp.com/api/accounts/login', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                phone: this.state.phone,
+                password: this.state.password,
+            }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.user.is_tax_payer) {
+                this.props.navigation.navigate('Main', {
+                    user: data.user,
+                    token: data.token
+                });
+            }
+            else {
+                this.props.navigation.navigate('ProfileDemo', {
+                    user: data.user,
+                    token: data.token
+                });
+            }
+        })
+        .catch((error) => console.log(error));
+    }
+
     handleFunction = () => {
-        this.props.navigation.navigate('ProfileDemo', {
-            phone: this.state.phone,
-            password: this.state.password,
-            is_tax_payer: this.state.is_tax_payer
-        });
-        console.log(this.state.phone);
-        console.log(this.state.password)
+        this.login();
     } 
 
     render() {

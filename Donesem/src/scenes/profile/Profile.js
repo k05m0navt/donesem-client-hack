@@ -9,9 +9,8 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                phone: ''
-            }
+            user: this.props.navigation.getParam('user', {}),
+            token: this.props.navigation.getParam('token', ''),
         }
     }
     render() {

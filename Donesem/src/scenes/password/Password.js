@@ -34,7 +34,7 @@ class Password extends Component {
         .then((response) => response.json())
         .then((data) => {
             if (data.user.is_tax_payer) {
-                this.props.navigation.navigate('Main', {
+                this.props.navigation.navigate('ProfileStack', {
                     user: data.user,
                     token: data.token
                 });

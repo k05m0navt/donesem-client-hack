@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 import login from '../../styles/loginstyles.js';
-import { useNavigation } from '@react-navigation/native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class NextButton extends Component {
     

@@ -5,6 +5,7 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from 'react-navigation-stack';
 import Password from './src/scenes/password/Password.js';
 import Main from './src/scenes/tab_navigation/Main.js';
+import ProfileStack from './src/navigation/profile_stack/ProfileStack.js';
 
 class App extends Component {
   constructor(props) {
@@ -44,10 +45,10 @@ const AppNavigator = createStackNavigator({
       headerLeft: () => null
     }
   },
-  Main: {
-    screen: Main,
+  ProfileStack: {
+    screen: ProfileStack,
     navigationOptions: {
-      headerTitle: "Profile"
+      headerShown: false
     }
   }
 },{

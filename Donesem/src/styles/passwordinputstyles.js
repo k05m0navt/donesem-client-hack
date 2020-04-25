@@ -9,7 +9,7 @@ const passwordinput = StyleSheet.create({
     password_input: {
         fontSize: 16,
         borderWidth: 1,
-        borderColor: '#BCBCBC',
+        borderColor: '#1D1B91',
         borderRadius: 4,
         height: 56,
         paddingLeft: 20

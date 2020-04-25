@@ -35,7 +35,7 @@ const login = StyleSheet.create({
         flexDirection: "row"
     },
     login_signup_text: {
-        color: "#2F80ED",
+        color: "#1D1B91",
         fontSize: 12,
         lineHeight: 14
     },
@@ -47,7 +47,7 @@ const login = StyleSheet.create({
     },
     login_next_container: {
         alignItems: "center",
-        backgroundColor: "#2F80ED",
+        backgroundColor: "#1D1B91",
         marginTop: "27%",
         marginLeft: "27.5%",
         borderRadius: 4,

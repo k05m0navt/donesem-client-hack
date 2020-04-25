@@ -4,6 +4,11 @@ import { TouchableOpacity } from "react-native";
 import profile from '../../styles/profilestyles.js';
 
 class ProfileHeader extends Component {
+
+    handleClick = () => {
+        this.props.handleFunction();
+    }
+
     render() {
         return(
             <View style={profile.header_container}>
@@ -13,6 +18,7 @@ class ProfileHeader extends Component {
                 </View>
                 <TouchableOpacity
                     style={profile.header_button_container}
+                    onPress={this.handleClick}
                 >
                     <Text style={profile.header_button_text}>Заполнить анкету</Text>
                 </TouchableOpacity>

@@ -89,10 +89,17 @@ const profile = StyleSheet.create({
         color: "#212121"
     },
     tabs_personal_info_button_container: {
+        flexDirection: "row",
         marginTop: "2%"
     },
     tabs_person_info_logo: {
         paddingRight: "12%"
+    },
+    tabs_personal_info_button_text_ind: {
+        fontSize: 16,
+        lineHeight: 19,
+        color: "#212121",
+        paddingLeft: "6%"
     }
 });
 

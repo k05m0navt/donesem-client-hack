@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer } from "react-navigation";
-import Profile from '../profile/Profile.js';
-import Orders from '../orders_feed/OrdersFeed.js';
+import Orders from '../../scenes/orders_feed/OrdersFeed.js';
+import ProfileStack from '../profile_stack/ProfileStack.js';
 
 
 class Main extends Component {
@@ -31,7 +31,7 @@ const TabNavigator = createBottomTabNavigator(
             }
         },
         Profile: {
-            screen: Profile,
+            screen: ProfileStack,
             navigationOptions: {
                 tabBarLabel: 'Профиль'
             }

@@ -5,6 +5,11 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import profile from '../../styles/profilestyles.js';
 
 class SettingsTabs extends Component {
+
+    handleClick = () => {
+        this.props.handleFunction();
+    }
+
     render() {
         return(
             <View style={profile.tabs_container}>
@@ -46,6 +51,17 @@ class SettingsTabs extends Component {
                         style={profile.tabs_personal_info_button_container}
                     >
                         <Text style={profile.tabs_personal_info_button_text}>Настройки</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={profile.tabs_personal_info}>
+                    <TouchableOpacity 
+                        style={profile.tabs_personal_info_button_container}
+                        onPress={this.handleClick}
+                    >
+                        <View style={profile.tabs_person_info_logo}>
+                            <Icon name={"list"} size={24} color="#666666"/>
+                        </View>
+                        <Text style={profile.tabs_personal_info_button_text_ind}>Просмотр заказов</Text>
                     </TouchableOpacity>
                 </View>
             </View>

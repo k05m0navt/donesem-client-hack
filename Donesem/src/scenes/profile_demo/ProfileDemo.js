@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ProfileDemoHeader from '../../components/atoms/ProfileDemoHeader.js';
-import InnInputFooter from '../../components/atoms/InnInputFooter.js';
+import ProfileDemoHeader from '../../components/molecules/ProfileDemoHeader.js';
+import InnInputFooter from '../../components/molecules/InnInputFooter.js';
 
 class ProfileDemo extends Component {
 

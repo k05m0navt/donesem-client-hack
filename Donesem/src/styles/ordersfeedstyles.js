@@ -75,18 +75,57 @@ const feed = StyleSheet.create({
     },
     order_button: {
         backgroundColor: "white",
-        borderRadius: 40,
-        paddingHorizontal: "15%",
-        paddingBottom: "150%",
-        marginTop: "50%"
+        marginTop: "5%"
     },
     order_button_text_header: {
         fontWeight: "500",
         fontSize: 18,
         lineHeight: 21,
         letterSpacing: 0.1,
-        color: "#000000"
-    }
+        color: "#000000",
+        marginLeft: "5%"
+    },
+    header_text: {
+        flexDirection: "row",
+    },
+    company_name2: {
+        color: "#219653",
+        marginBottom: "1.5%",
+        marginLeft: "5%"
+    },
+    titles_text2: {
+        fontSize: 12,
+        lineHeight: 14,
+        letterSpacing: 0.4,
+        color: "#BDBDBD",
+        marginTop: "1.3%",
+        marginLeft: "40%"
+    },
+    order_params2: {
+        flexDirection: "row",
+        marginTop: "5%",
+        marginLeft: "5%"
+    },
+    body_container: {
+        paddingLeft: '5%',
+        paddingVertical: "3%",
+        borderTopWidth: 0.2,
+        borderBottomWidth: 0.2
+    },
+    start_container: {
+        alignItems: "center",
+        backgroundColor: "#472FAA",
+        marginTop: "5%",
+        marginHorizontal: "10%",
+        borderRadius: 4,
+        paddingVertical: "3%",
+        paddingHorizontal: "10%"
+    },
+    start_text: {
+        fontSize: 14,
+        lineHeight: 16,
+        color: "#FFFFFF"
+    },
 });
 
 export default feed;

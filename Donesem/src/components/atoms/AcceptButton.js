@@ -10,9 +10,7 @@ class AcceptButton extends Component {
 
     render() {
         return(
-            <View style={{
-                margingTop: "5%"
-            }}>
+            <View>
                 <TouchableOpacity
                 style={form.button_container}
                 onPress={this.handleClick}

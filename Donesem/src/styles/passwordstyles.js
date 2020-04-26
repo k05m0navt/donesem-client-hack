@@ -32,7 +32,7 @@ const password = StyleSheet.create({
         flexDirection: "row"
     },
     password_forgot_text: {
-        color: "#2F80ED",
+        color: "#472FAA",
         fontSize: 12,
         lineHeight: 14
     },
@@ -44,7 +44,7 @@ const password = StyleSheet.create({
     },
     password_enter_container: {
         alignItems: "center",
-        backgroundColor: "#2F80ED",
+        backgroundColor: "#472FAA",
         marginTop: "26%",
         marginLeft: "34%",
         borderRadius: 4,

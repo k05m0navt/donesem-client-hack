@@ -10,6 +10,10 @@ class SettingsTabs extends Component {
         this.props.handleFunction();
     }
 
+    handleClick2 = () => {
+        this.props.handleFunction4();
+    }
+
     render() {
         return(
             <View style={profile.tabs_container}>
@@ -39,6 +43,7 @@ class SettingsTabs extends Component {
                     </View>
                     <TouchableOpacity 
                         style={profile.tabs_personal_info_button_container}
+                        onPress={this.handleClick2}
                     >
                         <Text style={profile.tabs_personal_info_button_text}>Платежная информация</Text>
                     </TouchableOpacity>

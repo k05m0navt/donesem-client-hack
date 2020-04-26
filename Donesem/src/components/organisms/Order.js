@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Modal } from 'react-native';
 import { Icon } from 'react-native-elements';
 import feed from '../../styles/ordersfeedstyles.js';
+import profiledemo from '../../styles/profiledemostyles.js';
+import PhotoForm from '../atoms/PhotoForm.js';
 
 class Order extends Component {
     constructor(props) {
@@ -18,14 +20,30 @@ class Order extends Component {
             weight: this.props.weight,
             size: this.props.size,
             compensation: this.props.compensation,
-            created_date: this.props.created_date
+            created_date: this.props.created_date,
+            isModalVisible: false
+        }
+    }
+
+    setModalVisible = (state) => {
+        this.props.setModalVisible(state);
+    }
+
+    changeStatus = () => {
+        if (this.state.status == "open") {
+            this.setState({ status: "close" });
+        }
+        else {
+            this.setState({ status: "open" });
         }
     }
 
     render() {
         return(
             <View style={feed.order_container}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.setModalVisible(true)}
+                >
                     <View>
                         <View>
                             <View>
@@ -60,8 +78,10 @@ class Order extends Component {
                     </View>
                 </TouchableOpacity>
                 <View>
-                    <TouchableOpacity>
-                        <Icon name={this.state.status == "open" ?  "add-circle-outline" : "highlight-off"} size={30}/>
+                    <TouchableOpacity
+                        onPress={this.changeStatus}
+                    >
+                        <Icon name={this.state.status == "open" ?  "add-circle-outline" : "highlight-off"} size={30} color={"#472FAA"}/>
                     </TouchableOpacity>
                 </View>
             </View>

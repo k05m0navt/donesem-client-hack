@@ -58,8 +58,9 @@ const form = StyleSheet.create({
     },
     button_container: {
         alignItems: "center",
-        backgroundColor: "#1D1B91",
-        borderRadius: 4,
+        backgroundColor: "#472FAA",
+        paddingVertical: "5%",
+        paddingHorizontal: "10%"
     },
     button_text: {
         fontSize: 14,

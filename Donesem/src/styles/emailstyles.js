@@ -9,7 +9,7 @@ const email = StyleSheet.create({
     login_input: {
         fontSize: 16,
         borderWidth: 1,
-        borderColor: '#BCBCBC',
+        borderColor: '#472FAA',
         borderRadius: 4,
         height: 56,
         paddingLeft: 20

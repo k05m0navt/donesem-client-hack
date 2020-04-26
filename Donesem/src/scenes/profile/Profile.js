@@ -27,9 +27,17 @@ class Profile extends Component {
         this.props.navigation.navigate('OrdersStack');
     }
 
+    handleFunction3 = () => {
+        this.props.navigation.navigate('Profile');
+    }
+
+    handleFunction4 = () => {
+        this.props.navigation.navigate('Payment');
+    }
+
     render() {
-        const prof_head = <View style={profile.profile_container}><ProfileHeader handleFunction={this.handleFunction} is_form_complete={this.state.is_form_complete}/><ProfileInfo phone={this.state.user.phone}/><SettingsTabs/></View>;
-        const prof = <View style={profile.profile_container}><ProfileInfo phone={this.state.user.phone}/><SettingsTabs handleFunction={this.handleFunction2}/></View>;
+        const prof_head = <View style={profile.profile_container}><ProfileHeader handleFunction={this.handleFunction} is_form_complete={this.state.is_form_complete}/><ProfileInfo phone={this.state.user.phone}/><SettingsTabs handleFunction={this.handleFunction3} handleFunction4={this.handleFunction3}/></View>;
+        const prof = <View style={profile.profile_container}><ProfileInfo phone={this.state.user.phone}/><SettingsTabs handleFunction={this.handleFunction2} handleFunction4={this.handleFunction4}/></View>;
         let ren_prof;
 
         console.log(this.state.is_form_complete)

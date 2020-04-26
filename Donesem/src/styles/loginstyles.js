@@ -24,18 +24,11 @@ const login = StyleSheet.create({
     login_forgot_mail_container: {
         flexDirection: "row"
     },
-    login_text_forgot_mail: {
-        fontSize: 14,
-        lineHeight: 16,
-        textAlign: "center",
-        paddingLeft: "1%",
-        color: "#2F80ED"
-    },
     login_footer: {
         flexDirection: "row"
     },
     login_signup_text: {
-        color: "#1D1B91",
+        color: "#472FAA",
         fontSize: 12,
         lineHeight: 14
     },
@@ -43,11 +36,10 @@ const login = StyleSheet.create({
         alignItems: "center",
         marginLeft: "4.5%",
         marginTop: "30%",
-
     },
     login_next_container: {
         alignItems: "center",
-        backgroundColor: "#1D1B91",
+        backgroundColor: "#472FAA",
         marginTop: "27%",
         marginLeft: "27.5%",
         borderRadius: 4,

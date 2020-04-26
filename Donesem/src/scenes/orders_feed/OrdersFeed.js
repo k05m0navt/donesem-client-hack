@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Modal } from 'react-native';
 import { FlatList } from 'react-native';
-import Order from '../../components/atoms/Order.js';
+import Order from '../../components/organisms/Order.js';
 import feed from '../../styles/ordersfeedstyles.js';
 
 class Orders extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalVisible: false
+        }
+    }
+
+    setModalVisible = (state) => {
+        this.setState({
+            isModalVisible: state
+        });
+    }
+
     render() {
         return(
             <View style={feed.container}>
@@ -46,10 +60,26 @@ class Orders extends Component {
                             created_date={item.created_date}
                             size={item.size}
                             created_date={item.created_date}
+                            setModalVisible={this.setModalVisible}
                         />
                         }
                     />
                 </View>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={this.state.isModalVisible}
+
+                >
+                    <View style={feed.modal_content_container}>
+                        <TouchableOpacity
+                            style={feed.order_button}
+                            onPress={() => this.setModalVisible(false)}
+                        >
+                            <Text style={feed.order_button_text_header}>Продукты в Выхино</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Modal>
             </View>
         );
     }

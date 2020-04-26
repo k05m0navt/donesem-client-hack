@@ -25,7 +25,7 @@ const profile = StyleSheet.create({
     header_button_text: {
         fontSize: 14,
         lineHeight: 16,
-        color: "#1B913C"
+        color: "#472FAA"
     },
     profile_info_container: {
         marginTop: "8%",
